@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f5f0e8;
+  --fg: #1a1a1a;
+  --teal: #2a9d8f;
+  --yellow: #e9c46a;
+}
+
+body {
+  margin: 0;
+  background: #f5f0e8;
+  color: #1a1a1a;
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+}
+
+.diary-input::placeholder {
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  color: #ccc;
+}
+
+.delete-btn:hover {
+  color: #e63946;
+  background: rgba(0, 0, 0, 0.15);
+}
