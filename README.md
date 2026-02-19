@@ -44,7 +44,7 @@ Then open http://localhost:5173
 
 ## part of a learning series
 
-This is project 11 in a series of 12 projects built to go from zero coding
+Part of a series of projects built to go from zero coding
 knowledge to full-stack developer. Each project introduces one new skill.
 
 Built by Bitcoineo — DeFi analyst learning to build.

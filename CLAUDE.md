@@ -1,4 +1,4 @@
-# Coffee Journal
+# my coffee diary
 
 ## Project
 A personal app to log and rate coffee shops I visit.
