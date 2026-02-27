@@ -1,51 +1,50 @@
-# my coffee diary ☕
+# my coffee diary
 
-A personal app to log and remember every coffee shop I visit.
+A personal app to log every coffee shop I visit. Polaroid-style cards, photo attachments, star ratings, and a cosy jazz player in the corner. Everything saves in your browser with no account needed.
 
-## what it does
+**Stack:** `React · TypeScript · Vite · Tailwind CSS · Framer Motion · Web Audio API · localStorage`
 
-- Log coffee shops with name, location, rating and notes
+---
+
+## Why I built this
+
+This was my first real project. I had just started learning to code and wanted to build something I would actually use. Coffee shops are where I work, so logging them felt natural. The goal was to touch as many fundamentals as possible in one small app: forms, state, file uploads, local persistence, animations, sound.
+
+## What it does
+
+- Log coffee shops with name, location, rating, and notes
 - Attach a photo to each entry
 - Entries display as polaroid cards with a pin
 - Filter entries by star rating
 - Cosy jazz music player while you browse
-- Everything saves in your browser — no account needed
+- All data saved in localStorage, no account or backendd
 
-## preview
+## Preview
 
 ![my coffee diary](./screenshot.png)
 
-## built with
+## What I learned building this
 
-- Vite + React + TypeScript
-- Tailwind CSS
-- Framer Motion
-- Web Audio API (shutter sound)
-- localStorage (data persistence)
-
-## what I learned building this
-
-- Project structure and CLAUDE.md
-- Controlled forms and state management
-- localStorage for persistent data
-- File upload with FileReader and base64 images
-- Web Audio API for sound effects
-- Component architecture (passing props, callbacks)
+- Project structure and CLAUDE.md workflow
+- Controlled forms and state management in React
+- localStorage for persistent data without a backend
+- File upload with FileReader and base64 image encoding
+- Web Audio API for the shutter sound effect
+- Component architecture: props, callbacks, lifting state
 - CSS design system with custom variables
+- Tailwind utility classes and Framer Motion animations
 
-## how to run
+## Run locally
 
-```
-npm install
-npm run dev
-```
+    npm install
+    npm run dev
 
-Then open http://localhost:5173
+Open http://localhost:5173
 
-## part of a learning series
+---
 
-Part of a series of projects built to go from zero coding
-knowledge to full-stack developer. Each project introduces one new skill.
+Part of a series of projects built to go from zero coding knowledge to full-stack developer. Each project introduces one new concept.
 
-Built by Bitcoineo — DeFi analyst learning to build.
-github.com/Bitcoineo
+## GitHub Topics
+
+`react` `typescript` `vite` `tailwind` `framer-motion` `localstorage` `learning` `beginner` `coffee`
