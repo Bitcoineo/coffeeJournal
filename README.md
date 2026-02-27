@@ -4,20 +4,22 @@ A personal app to log every coffee shop I visit. Polaroid-style cards, photo att
 
 **Stack:** `React · TypeScript · Vite · Tailwind CSS · Framer Motion · Web Audio API · localStorage`
 
+**Live:** https://coffeejournal-bitcoineo.vercel.app
+
 ---
 
 ## Why I built this
 
 This was my first real project. I had just started learning to code and wanted to build something I would actually use. Coffee shops are where I work, so logging them felt natural. The goal was to touch as many fundamentals as possible in one small app: forms, state, file uploads, local persistence, animations, sound.
 
-## What it does
+## Features
 
 - Log coffee shops with name, location, rating, and notes
 - Attach a photo to each entry
 - Entries display as polaroid cards with a pin
 - Filter entries by star rating
 - Cosy jazz music player while you browse
-- All data saved in localStorage, no account or backendd
+- Allsaved in localStorage, no account or backend needed
 
 ## Preview
 
@@ -31,7 +33,6 @@ This was my first real project. I had just started learning to code and wanted t
 - File upload with FileReader and base64 image encoding
 - Web Audio API for the shutter sound effect
 - Component architecture: props, callbacks, lifting state
-- CSS design system with custom variables
 - Tailwind utility classes and Framer Motion animations
 
 ## Run locally
