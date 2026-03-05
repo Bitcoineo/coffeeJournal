@@ -49,11 +49,11 @@ function AddEntry({ onAdd }: AddEntryProps) {
   return (
     <form
       onSubmit={handleSubmit}
+      className="p-4 md:p-8"
       style={{
         background: 'white',
         boxShadow: '0 2px 20px rgba(0,0,0,0.06)',
         borderRadius: 16,
-        padding: 32,
       }}
     >
       <div style={{ marginBottom: 20 }}>
@@ -87,8 +87,13 @@ function AddEntry({ onAdd }: AddEntryProps) {
               onClick={() => setRating(star)}
               style={{
                 cursor: 'pointer',
-                fontSize: 24,
+                fontSize: 28,
                 color: star <= rating ? '#2a9d8f' : '#ddd',
+                minWidth: 44,
+                minHeight: 44,
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
               }}
             >
               ★
@@ -137,7 +142,7 @@ function AddEntry({ onAdd }: AddEntryProps) {
           <img
             src={image}
             alt="Preview"
-            style={{ marginTop: 12, width: '100%', maxHeight: 160, objectFit: 'cover', borderRadius: 8 }}
+            style={{ marginTop: 12, width: '100%', maxHeight: 200, objectFit: 'cover', borderRadius: 8 }}
           />
         )}
       </div>

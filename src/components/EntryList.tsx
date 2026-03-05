@@ -18,7 +18,7 @@ function EntryList({ entries, onDelete }: EntryListProps) {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: 48, marginTop: 48 }}>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mt-6 md:mt-12">
       {entries.map((entry) => {
         const tilt = (entry.id.charCodeAt(0) % 7) - 3
         return (
@@ -27,7 +27,7 @@ function EntryList({ entries, onDelete }: EntryListProps) {
           style={{
             position: 'relative',
             transform: `rotate(${tilt}deg)`,
-            marginBottom: 32,
+            marginBottom: 16,
           }}
         >
           {/* Pin */}
@@ -60,14 +60,14 @@ function EntryList({ entries, onDelete }: EntryListProps) {
               onClick={() => onDelete(entry.id)}
               style={{
                 position: 'absolute',
-                top: 8,
-                right: 8,
-                width: 20,
-                height: 20,
+                top: 4,
+                right: 4,
+                width: 32,
+                height: 32,
                 borderRadius: '50%',
                 background: 'rgba(0,0,0,0.08)',
                 color: '#999',
-                fontSize: 12,
+                fontSize: 16,
                 border: 'none',
                 cursor: 'pointer',
                 padding: 0,

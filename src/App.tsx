@@ -11,8 +11,11 @@ const filters: { label: string; value: number | null }[] = [
   { label: '★★★', value: 3 },
 ]
 
+let shutterCtx: AudioContext | null = null
+
 function playShutterSound() {
-  const ctx = new AudioContext()
+  if (!shutterCtx) shutterCtx = new AudioContext()
+  const ctx = shutterCtx
 
   // White noise burst (0.08s)
   const buffer = ctx.createBuffer(1, ctx.sampleRate * 0.08, ctx.sampleRate)
@@ -68,16 +71,16 @@ function App() {
 
   return (
     <>
-      <div className="min-h-screen" style={{ maxWidth: 1100, margin: '0 auto', padding: '64px 16px' }}>
+      <div className="min-h-screen px-4 py-8 md:py-16" style={{ maxWidth: 1100, margin: '0 auto' }}>
         <h1
-          className="text-center"
-          style={{ fontFamily: "'Caveat', cursive", fontSize: 42, color: '#2a9d8f', marginBottom: 4 }}
+          className="text-center text-3xl md:text-[42px]"
+          style={{ fontFamily: "'Caveat', cursive", color: '#2a9d8f', marginBottom: 4 }}
         >
           my coffee diary ☕
         </h1>
         <p
-          className="text-center"
-          style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, fontSize: 14, color: '#888', marginBottom: 8 }}
+          className="text-center text-sm md:text-base"
+          style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, color: '#888', marginBottom: 8 }}
         >
           places i've been. cups i've loved.
         </p>
@@ -88,7 +91,7 @@ function App() {
           </p>
         )}
 
-        <div className="flex items-center justify-center gap-2" style={{ marginBottom: 48 }}>
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-8 md:mb-12">
           <span style={{ fontSize: 12, color: '#aaa' }}>show:</span>
           {filters.map((f) => (
             <button
@@ -99,9 +102,10 @@ function App() {
                 color: filter === f.value ? 'white' : '#aaa',
                 border: 'none',
                 borderRadius: 20,
-                padding: '4px 12px',
-                fontSize: 12,
+                padding: '6px 14px',
+                fontSize: 13,
                 cursor: 'pointer',
+                minHeight: 44,
               }}
             >
               {f.label}
@@ -109,11 +113,11 @@ function App() {
           ))}
         </div>
 
-        <div className="flex flex-col-reverse md:flex-row" style={{ gap: 48 }}>
-          <div style={{ flex: 1 }}>
+        <div className="flex flex-col-reverse md:flex-row gap-6 md:gap-12">
+          <div style={{ flex: 1, minWidth: 0 }}>
             <EntryList entries={filtered} onDelete={handleDelete} />
           </div>
-          <div className="md:sticky" style={{ width: undefined, flexShrink: 0, top: 24, alignSelf: 'flex-start' }}>
+          <div className="md:sticky" style={{ flexShrink: 0, top: 24, alignSelf: 'flex-start' }}>
             <div className="w-full md:w-[380px]">
               <AddEntry onAdd={handleAdd} />
             </div>

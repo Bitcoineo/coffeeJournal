@@ -3,6 +3,19 @@ import { motion } from 'framer-motion'
 
 const STREAM_URL = 'https://streams.ilovemusic.de/iloveradio17.mp3'
 
+const playerBtnStyle: React.CSSProperties = {
+  width: 48,
+  height: 48,
+  borderRadius: '50%',
+  background: 'white',
+  boxShadow: '0 4px 15px rgba(0,0,0,0.15)',
+  border: 'none',
+  cursor: 'pointer',
+  fontFamily: "'Caveat', cursive",
+  fontSize: 20,
+  color: '#2a9d8f',
+}
+
 function MusicPlayer() {
   const [playing, setPlaying] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
@@ -25,7 +38,7 @@ function MusicPlayer() {
   }
 
   return (
-    <div style={{ position: 'fixed', bottom: 24, right: 24, zIndex: 50, textAlign: 'center' }}>
+    <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 text-center">
       {playing && (
         <div
           style={{
@@ -44,37 +57,12 @@ function MusicPlayer() {
           onClick={handlePause}
           animate={{ scale: [1, 1.05, 1] }}
           transition={{ repeat: Infinity, duration: 2 }}
-          style={{
-            width: 48,
-            height: 48,
-            borderRadius: '50%',
-            background: 'white',
-            boxShadow: '0 4px 15px rgba(0,0,0,0.15)',
-            border: 'none',
-            cursor: 'pointer',
-            fontFamily: "'Caveat', cursive",
-            fontSize: 20,
-            color: '#2a9d8f',
-          }}
+          style={playerBtnStyle}
         >
           ■
         </motion.button>
       ) : (
-        <button
-          onClick={handlePlay}
-          style={{
-            width: 48,
-            height: 48,
-            borderRadius: '50%',
-            background: 'white',
-            boxShadow: '0 4px 15px rgba(0,0,0,0.15)',
-            border: 'none',
-            cursor: 'pointer',
-            fontFamily: "'Caveat', cursive",
-            fontSize: 20,
-            color: '#2a9d8f',
-          }}
-        >
+        <button onClick={handlePlay} style={playerBtnStyle}>
           ♪
         </button>
       )}

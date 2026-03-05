@@ -17,6 +17,7 @@ body {
   color: #1a1a1a;
   font-family: 'DM Sans', sans-serif;
   min-height: 100vh;
+  overflow-x: hidden; /* prevents horizontal scroll from rotated polaroid cards */
 }
 
 .diary-input::placeholder {
